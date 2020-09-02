@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/lixiaolei90/littlecar/issues"
   },
-  "homepage": "https://github.com/lixiaolei90/littlecar#readme"
+  "homepage": "https://github.com/lixiaolei90/littlecar#readme",
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
 }
