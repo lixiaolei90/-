@@ -2,6 +2,7 @@
   <div>
     <button class="l-button" :class="{[`icon-${iconPosition}`]: true}">
       <l-icon class="icon" v-if="icon" :name="icon"></l-icon>
+      <l-icon class="loading" name="loading"></l-icon>
       <div class="content">
         <slot></slot>
       </div>
@@ -26,13 +27,13 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  font-size: var(--font-size);
-}
-
-#app {
-  margin: 20px;
-  display: flex;
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
 
 .l-button {
@@ -76,7 +77,9 @@ body {
       margin-right: 0;
     }
   }
-
+  .loading{
+    animation: spin 2s infinite linear;
+  }
 }
 
 </style>
