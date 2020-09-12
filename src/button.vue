@@ -1,9 +1,7 @@
 <template>
   <div>
     <button class="l-button" :class="{[`icon-${iconPosition}`]: true}">
-      <svg v-if="icon" class="icon">
-        <use :xlink:href="`#i-${icon}`"></use>
-      </svg>
+      <l-icon class="icon" v-if="icon" :name="icon"></l-icon>
       <div class="content">
         <slot></slot>
       </div>
@@ -18,7 +16,7 @@ export default {
     iconPosition: {
       type:String,
       default: 'left',
-      validator(value) {
+      validator: function (value) {
         return (value === "left" || value === "right")
       }
     }
@@ -80,8 +78,5 @@ body {
   }
 
 }
-  .icon {
-    width: 1em;
-    height: 1em;
-  }
+
 </style>
