@@ -8,4 +8,7 @@ Vue.component('l-icon', icon)
 
 new Vue({
     el: "#app",
+    data: {
+        loading1 : false,
+    }
 })
