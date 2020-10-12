@@ -1,7 +1,7 @@
 import Vue from "vue"
 import button from "./button";
 import icon from "./icon";
-
+import chai from 'chai'
 
 Vue.component('l-button', button)
 Vue.component('l-icon', icon)
@@ -14,3 +14,4 @@ new Vue({
         loading3 : false,
     }
 })
+
