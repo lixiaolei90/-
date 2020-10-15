@@ -1,7 +1,8 @@
 import Vue from "vue"
 import button from "./button";
 import icon from "./icon";
-import chai from 'chai'
+import chai from 'chai';
+import spies from 'chai-spies';
 
 Vue.component('l-button', button)
 Vue.component('l-icon', icon)
@@ -82,6 +83,7 @@ const expect = require('chai').expect;
     vm.$destroy();
 }
 // 测试click
+chai.use(spies);
 {       
     const Constructor = Vue.extend(button);
     const vm = new Constructor({
@@ -90,9 +92,9 @@ const expect = require('chai').expect;
         }
     });
     vm.$mount();
-    vm.$on('click', function(){
-        console.log('click')
-    });
+    let spy = chai.spy(function(){});
+    vm.$on('click', spy);
     let gbutton = vm.$el.querySelector('button');
     gbutton.click();
+    expect(spy).to.have.been.called();
 }
