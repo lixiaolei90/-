@@ -64,9 +64,9 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  //vertical-align: middle;
   >.content{
-    order: 2;}
+    order: 2;
+    }
   >.icon{
     margin-right:0.3em;
     order:1;
