@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
 <head>
-    <meta charset="UTF-8">
-    <title>小车</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+	<meta charset="UTF-8">
+	<title>小车</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-        :root {
-            --button-height: 32px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --font-size: 14px;
-            --border-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-        }
-        body {
-            font-size: var(--font-size);
-        }
+		:root {
+			--button-height: 32px;
+			--button-bg: white;
+			--button-active-bg: #eee;
+			--font-size: 14px;
+			--border-radius: 4px;
+			--color: #333;
+			--border-color: #999;
+			--border-color-hover: #666;
+		}
 
-        #app {
-            margin: 20px;
-            display: flex;
-        }
-    </style>
+		body {
+			font-size: var(--font-size);
+		}
+
+		#app {
+			margin: 20px;
+			display: flex;
+		}
+	</style>
 </head>
 <body>
 <div id="app">
-    <l-button icon="settings" icon-position="left" :loading="loading1" @click = "loading1 = !loading1">设置</l-button>
-    <l-button :loading="loading2" @click = "loading2 = !loading2">设置</l-button>
-    <l-button icon="settings" icon-position="right" :loading="loading3" @click = "loading3 = !loading3">设置</l-button>
+	<l-button icon="settings" icon-position="left" :loading="loading1" @click="loading1 = !loading1">设置</l-button>
+	<l-button :loading="loading2" @click="loading2 = !loading2">设置</l-button>
+	<l-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">设置</l-button>
+	<l-button-group>
+		<l-button icon="left">上一页</l-button>
+		<l-button>更多</l-button>
+		<l-button icon="right" icon-position="right">下一页</l-button>
+	</l-button-group>
 </div>
 
 <script src="src/app.js"></script>
