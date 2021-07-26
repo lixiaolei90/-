@@ -1,15 +1,21 @@
 <template>
-    <button class="l-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
-      <l-icon class="icon" v-if="icon && !loading" :name="icon"></l-icon>
-      <l-icon class="loading icon" v-if="loading" name="loading"></l-icon>
-      <div class="content">
-        <slot></slot>
-      </div>
-    </button>
+  <button class="l-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
+    <l-icon class="icon" v-if="icon && !loading" :name="icon"></l-icon>
+    <l-icon class="loading icon" v-if="loading" name="loading"></l-icon>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script>
+
+import Icon from "../src/icon"
+
 export default {
+  components: {
+    'l-icon': Icon
+  },
   props: {
     icon: "",
     loading: {
